@@ -1,0 +1,30 @@
+# Large dataset files
+data/*.csv
+data/*.xlsx
+data/*.zip
+data/*.parquet
+data/**/*.csv
+data/**/*.xlsx
+data/**/*.zip
+data/**/*.parquet
+
+# Jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# VS Code local settings
+.vscode/
