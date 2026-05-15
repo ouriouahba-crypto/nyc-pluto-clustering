@@ -28,3 +28,6 @@ env/
 
 # VS Code local settings
 .vscode/
+
+# Presentation files (local only, not part of the deliverable)
+reports/presentation/

@@ -1,4 +1,4 @@
-# NYC PLUTO — Unsupervised Learning Project
+# NYC PLUTO - Unsupervised Learning Project
 
 ## Description
 
@@ -20,7 +20,7 @@ actionable insights through dimensionality reduction and clustering algorithms.
 | 4 | Clustering (K-Means, DBSCAN, Hierarchical) | Pending |
 | 5 | Final Report | Pending |
 
-**Current status: Phase 1 — EDA in progress**
+**Current status: Phase 1 - EDA in progress**
 
 ---
 
@@ -84,38 +84,34 @@ NYC_PLUTO/
 
 The NYC PLUTO dataset is published by the NYC Department of City Planning.
 
-- **Official source:** [NYC Open Data — PLUTO](https://www.nyc.gov/site/planning/data-maps/open-data/dwn-pluto-mappluto.page)
+- **Official source:** [NYC Open Data - PLUTO](https://www.nyc.gov/site/planning/data-maps/open-data/dwn-pluto-mappluto.page)
 - Download the latest version and place the file in `data/raw/`.
 - The `data/` folder is excluded from git tracking (files are too large).
 
 ---
 
-## Team Members
+## Team
 
-| Member | EDA Notebook |
-|--------|-------------|
-| [NAME 1] | `01_dataset_discovery.ipynb` — Basic info, feature understanding, missing values |
-| [NAME 2] | `02_visualizations_outliers.ipynb` — Descriptive statistics, outliers, visualizations |
-| [NAME 3] | `03_feature_engineering.ipynb` — Feature engineering, imbalanced data, EDA synthesis |
+- Alon Cohen
+- Elie Hamou
+- Ouri Ouahba
 
 ---
 
 ## Workflow
 
-We follow a **branch-per-person** strategy to avoid conflicts:
+We work on feature branches and merge into `main` via pull requests:
 
-1. Each team member works on their own branch named after their task:
-   ```
-   git checkout -b eda/dataset-discovery
-   git checkout -b eda/visualizations-outliers
-   git checkout -b eda/feature-engineering
+1. Create a branch for the feature or phase you are working on:
+   ```bash
+   git checkout -b <branch-name>
    ```
 
-2. When a notebook is ready for review, open a **Pull Request** to `main`.
+2. When the work is ready, open a **Pull Request** to `main`.
 
-3. At least one other team member reviews the PR before merging.
+3. At least one team member reviews the PR before merging.
 
-4. After merging, delete the feature branch and pull the latest `main`:
+4. After merging, delete the feature branch and sync your local `main`:
    ```bash
    git checkout main
    git pull origin main
