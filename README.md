@@ -14,13 +14,13 @@ actionable insights through dimensionality reduction and clustering algorithms.
 
 | # | Phase | Status |
 |---|-------|--------|
-| 1 | Exploratory Data Analysis (EDA) | **In progress** |
-| 2 | Preprocessing & Feature Selection | Pending |
-| 3 | Dimensionality Reduction (PCA / t-SNE / UMAP) | Pending |
-| 4 | Clustering (K-Means, DBSCAN, Hierarchical) | Pending |
+| 1 | Exploratory Data Analysis (EDA) | Done |
+| 2 | Preprocessing and Feature Selection | Done |
+| 3 | Dimensionality Reduction (PCA) | Done |
+| 4 | Clustering (K-Means, DBSCAN) | Done |
 | 5 | Final Report | Pending |
 
-**Current status: Phase 1 - EDA in progress**
+**Current status: Phase 4 complete - clustering phase finalized**
 
 ---
 
@@ -41,7 +41,9 @@ NYC_PLUTO/
 │   ├── 03_dimensionality_reduction/
 │   │   └── pca.ipynb
 │   └── 04_clustering/
-│       └── clustering.ipynb
+│       ├── clustering.ipynb
+│       ├── dbscan_comparison_alon.ipynb
+│       └── clustering_visualization_interpretation_ouri.ipynb
 ├── reports/
 │   ├── figures/              # Exported charts and plots
 │   └── team_notes.md         # Shared team decisions log
@@ -77,6 +79,18 @@ NYC_PLUTO/
    ```bash
    jupyter notebook
    ```
+
+---
+
+## How to Run / Reproduce
+
+Execute the notebooks in the following order. Each notebook reads the outputs of the previous one.
+
+1. `notebooks/02_preprocessing/preprocessing.ipynb` - cleans the raw data, standardizes features, fits K-Means, and writes all CSV files to `data/processed/` (X_scaled.csv, sample_index.csv, cluster_labels.csv, pluto_companion.csv, and others).
+2. `notebooks/04_clustering/dbscan_comparison_alon.ipynb` - loads X_scaled.csv and the shared sample, runs DBSCAN tuning and comparison, and writes `data/processed/dbscan_kmeans_sample_labels.csv` and `data/processed/dbscan_selection_summary.csv`.
+3. `notebooks/04_clustering/clustering_visualization_interpretation_ouri.ipynb` - loads the outputs from both previous notebooks to produce visualizations, cluster profiles, and the final synthesis.
+
+The CSV files in `data/processed/` are not tracked by git because they are large. Running the notebooks in the order above regenerates them from the raw data.
 
 ---
 
