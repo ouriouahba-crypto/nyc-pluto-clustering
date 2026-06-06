@@ -15,12 +15,11 @@ actionable insights through dimensionality reduction and clustering algorithms.
 | # | Phase | Status |
 |---|-------|--------|
 | 1 | Exploratory Data Analysis (EDA) | Done |
-| 2 | Preprocessing and Feature Selection | Done |
-| 3 | Dimensionality Reduction (PCA) | Done |
-| 4 | Clustering (K-Means, DBSCAN) | Done |
-| 5 | Final Report | Pending |
+| 2 | Preprocessing, Feature Selection and PCA | Done |
+| 3 | Clustering (K-Means, DBSCAN) | Done |
+| 4 | Final Report | Pending |
 
-**Current status: Phase 4 complete - clustering phase finalized**
+**Current status: Phase 3 complete - clustering phase finalized**
 
 ---
 
@@ -38,10 +37,7 @@ NYC_PLUTO/
 │   │   └── 03_feature_engineering.ipynb
 │   ├── 02_preprocessing/
 │   │   └── preprocessing.ipynb
-│   ├── 03_dimensionality_reduction/
-│   │   └── pca.ipynb
 │   └── 04_clustering/
-│       ├── clustering.ipynb
 │       ├── dbscan_comparison_alon.ipynb
 │       └── clustering_visualization_interpretation_ouri.ipynb
 ├── reports/
