@@ -35,11 +35,8 @@ NYC_PLUTO/
 │   │   ├── 01_dataset_discovery.ipynb
 │   │   ├── 02_visualizations_outliers.ipynb
 │   │   └── 03_feature_engineering.ipynb
-│   ├── 02_preprocessing/
-│   │   └── preprocessing.ipynb
-│   └── 04_clustering/
-│       ├── dbscan_comparison_alon.ipynb
-│       └── clustering_visualization_interpretation_ouri.ipynb
+│   └── 02_clustering/
+│       └── processing_and_clustering.ipynb
 ├── reports/
 │   ├── figures/              # Exported charts and plots
 │   └── team_notes.md         # Shared team decisions log
@@ -80,13 +77,11 @@ NYC_PLUTO/
 
 ## How to Run / Reproduce
 
-Execute the notebooks in the following order. Each notebook reads the outputs of the previous one.
+Run the single combined notebook end to end:
 
-1. `notebooks/02_preprocessing/preprocessing.ipynb` - cleans the raw data, standardizes features, fits K-Means, and writes all CSV files to `data/processed/` (X_scaled.csv, sample_index.csv, cluster_labels.csv, pluto_companion.csv, and others).
-2. `notebooks/04_clustering/dbscan_comparison_alon.ipynb` - loads X_scaled.csv and the shared sample, runs DBSCAN tuning and comparison, and writes `data/processed/dbscan_kmeans_sample_labels.csv` and `data/processed/dbscan_selection_summary.csv`.
-3. `notebooks/04_clustering/clustering_visualization_interpretation_ouri.ipynb` - loads the outputs from both previous notebooks to produce visualizations, cluster profiles, and the final synthesis.
+1. `notebooks/02_clustering/processing_and_clustering.ipynb` - runs the full pipeline in one go: preprocessing, K-Means, DBSCAN comparison, visualization, and final synthesis. It writes all CSV outputs to `data/processed/` (X_scaled.csv, sample_index.csv, cluster_labels.csv, pluto_companion.csv, dbscan_kmeans_sample_labels.csv, dbscan_selection_summary.csv, and others).
 
-The CSV files in `data/processed/` are not tracked by git because they are large. Running the notebooks in the order above regenerates them from the raw data.
+The CSV files in `data/processed/` are not tracked by git because they are large. Running the notebook regenerates them from the raw data.
 
 ---
 
