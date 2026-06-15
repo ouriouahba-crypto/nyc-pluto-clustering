@@ -21,8 +21,14 @@
 - However the **gap statistic -> k=1** and **GMM BIC -> large k**: the data is a
   **continuum** with one dominant gradient (residential vs non-residential), not a set
   of discrete islands.
-- **k=3** recovers the three visible groups: ~64% single-family houses, ~29% dense
-  multi-family residential, ~8% non-residential. It ties k=2 on Calinski-Harabasz and is
-  perfectly stable.
-- **Decision:** report **k=2** as the dominant split, and use **k=3** as the segmentation
-  for interpretation (three clean building typologies).
+- For a descriptive segmentation we compared **k=5 vs k=6** with four targeted tests:
+  hierarchical nesting (k=6 nests perfectly into k=2, purity 1.00), per-cluster
+  silhouette, **cross-algorithm robustness** (KMeans/GMM/Ward agree more at k=5,
+  mean ARI ~0.44 vs ~0.35 at k=6), and centroid distances (at k=6 the two "house"
+  clusters are near-duplicates, d~2.4 vs mean ~7).
+- **Decision:** two-level segmentation. Report **k=2** as the dominant, statistically
+  validated split (the backbone), and use **k=5** as the descriptive segmentation for
+  interpretation. k=5 is the finest partition that stays distinct and reproducible across
+  algorithms and nests cleanly inside k=2. The five typologies:
+  ~53% single-family houses, ~32% dense older residential (walk-ups), ~8% mixed
+  residential/commercial, ~6% commercial/public, ~1% industrial.
