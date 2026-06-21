@@ -31,3 +31,6 @@ env/
 
 # Presentation files (local only, not part of the deliverable)
 reports/presentation/
+
+# Claude Code local settings
+.claude/
