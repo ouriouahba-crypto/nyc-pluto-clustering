@@ -36,7 +36,7 @@ NYC_PLUTO/
 │   │   ├── 02_visualizations_outliers.ipynb
 │   │   └── 03_feature_engineering.ipynb
 │   └── 02_clustering/
-│       └── processing_and_clustering.ipynb
+│       └── pca_then_clustering.ipynb
 ├── reports/
 │   ├── figures/              # Exported charts and plots
 │   └── team_notes.md         # Shared team decisions log
@@ -77,9 +77,9 @@ NYC_PLUTO/
 
 ## How to Run / Reproduce
 
-Run the single combined notebook end to end:
+Run the single self-contained notebook end to end:
 
-1. `notebooks/02_clustering/processing_and_clustering.ipynb` - runs the full pipeline in one go: preprocessing, K-Means, DBSCAN comparison, visualization, and final synthesis. It writes all CSV outputs to `data/processed/` (X_scaled.csv, sample_index.csv, cluster_labels.csv, pluto_companion.csv, dbscan_kmeans_sample_labels.csv, dbscan_selection_summary.csv, and others).
+1. `notebooks/02_clustering/pca_then_clustering.ipynb` - runs the full pipeline end to end: Part 0 preprocessing and standardization from the raw file, Part 1 PCA + K-Means, Part 2 DBSCAN, Part 3 comparison/interpretation/visualization, and Part 4 theory questions and coding exercises. It writes the processed artifacts to `data/processed/` (X_scaled.csv, X_scaled_features.csv, pluto_companion.csv, sample_index.csv, and others).
 
 The CSV files in `data/processed/` are not tracked by git because they are large. Running the notebook regenerates them from the raw data.
 
